@@ -23,6 +23,14 @@ graph_food_4 = []
 
 
 def printed_statistics(message_client_spent, message_percentage, message_faithful_clients, message_cruises_tickets):
+    """Imprime las estadistas y genera los graficos respectivos
+
+    Args:
+        message_client_spent (str): Mensaje con el valor de gastos promedios de un cliente
+        message_percentage (str): Mensaje con el porcentaj de clientes que no compraron un tour
+        message_faithful_clients (str): Mensaje con los clientes mas fieles a la linea
+        message_cruises_tickets (str): Mensaje con los cruceros con mas tickets vendidos
+    """
     print(f'''  
     //////////////////////////////////////////
 
@@ -113,12 +121,20 @@ def printed_statistics(message_client_spent, message_percentage, message_faithfu
     
 
 def cruise_api():
+    """Conecta con la API de SamanCaribbeam
+
+    returns: 
+
+        dict ---> Devuelve el .json de la API 
+    """
     url = 'https://saman-caribbean.vercel.app/api/cruise-ships'
 
     response = requests.request("GET", url)
     return(response.json())
 
 def statistics():
+    """Realiza todos los calculos y calcula los graficos a imprimir en las estadisticas
+    """
     try:
         client = open('ClientData.txt', 'r')
         for i in client.readlines():

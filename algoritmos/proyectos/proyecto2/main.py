@@ -8,6 +8,19 @@ import Statistics
 
 #TODO RECORDAR DOCSTRING DE LAS FUNCIONES 
 def main_menu(restaurant, menu, menu_combo, tours, clients, cruise, rooms, statistics):
+    """Menu del programa que integra los modulos.
+
+    Args:
+        restaurant: Inicializa el modulo del restaurant
+        menu: Estructura que almacena los productos creados por el administrador del restarant
+        menu_combo: Estructura que almacena los productos creados por el administrador del restaurnat
+        tours: Inicializa el modulo de tours
+        clients: lista que almacena clientes
+        cruise: Inicializa el modulo de cruseros
+        rooms: Inicializa el modulo de gestion de habitaciones
+        statistics: Inicializa el modulo de las estadisticas
+
+    """
     while True:
         while True:
             try:
